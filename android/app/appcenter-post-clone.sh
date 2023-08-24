@@ -15,7 +15,7 @@ echo "Installed flutter to `pwd`/flutter"
 # if you get "Execution failed for task ':app:lintVitalRelease'." error, uncomment next two lines
 # flutter build apk --debug
 # flutter build apk --profile
-flutter build apk --release -t lib/main_development.dart
+flutter build apk --release -t lib/main.dart
 # if you need build bundle (AAB) in addition to your APK, uncomment line below and last line of this script.
 #flutter build appbundle --release --build-number $APPCENTER_BUILD_ID
 # copy the APK where AppCenter will find it
