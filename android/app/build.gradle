@@ -61,6 +61,12 @@ android {
     }
 
     signingConfigs {
+        release {
+            storePassword '123123'
+            keyAlias 'android-key'
+            keyPassword '321321x'
+            storeFile file('/Users/matejlamza/keystores/upload-keystore.jks')
+        }
         if (System.getenv("ANDROID_KEYSTORE_PATH")) {
             release {
                 storeFile file(System.getenv("ANDROID_KEYSTORE_PATH"))
