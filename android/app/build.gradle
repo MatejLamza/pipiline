@@ -61,26 +61,11 @@ android {
     }
 
     signingConfigs {
-        release {
-            storePassword '123123'
-            keyAlias 'android-key'
-            keyPassword '321321x'
-            storeFile file('/Users/matejlamza/keystores/upload-keystore.jks')
-        }
-        if (System.getenv("ANDROID_KEYSTORE_PATH")) {
-            release {
-                storeFile file(System.getenv("ANDROID_KEYSTORE_PATH"))
-                keyAlias System.getenv("ANDROID_KEYSTORE_ALIAS")
-                keyPassword System.getenv("ANDROID_KEYSTORE_PRIVATE_KEY_PASSWORD")
-                storePassword System.getenv("ANDROID_KEYSTORE_PASSWORD")
-            }
-        } else {
-            release {
-                keyAlias keystoreProperties['keyAlias']
-                keyPassword keystoreProperties['keyPassword']
-                storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-                storePassword keystoreProperties['storePassword']
-            }
+        releaseSigningConfig {
+            storeFile rootProject.file("app/upload-keystore.jks")
+            storePassword System.getProperty("APPCENTER_KEYSTORE_PASSWORD")
+            keyAlias System.getProperty("APPCENTER_KEY_ALIAS")
+            keyPassword System.getProperty("APPCENTER_KEY_PASSWORD")
         }
     }
 
@@ -105,9 +90,7 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt')
+            signingConfig signingConfigs.releaseSigningConfig
         }
         debug {
             signingConfig signingConfigs.debug
