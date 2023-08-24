@@ -69,7 +69,7 @@ android {
         }
     }*/
 
-    flavorDimensions "default"
+   /* flavorDimensions "default"
     productFlavors {
         production {
             dimension "default"
@@ -86,7 +86,7 @@ android {
             applicationIdSuffix ".dev"
             manifestPlaceholders = [appName: "[DEV] Pipeline"]
         }
-    }
+    }*/
 
     /*buildTypes {
         release {
