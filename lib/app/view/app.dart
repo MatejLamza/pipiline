@@ -1,3 +1,5 @@
+import 'package:appcenter_sdk_flutter/appcenter_sdk_flutter.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pipeline/counter/counter.dart';
 import 'package:pipeline/l10n/l10n.dart';
@@ -18,5 +20,14 @@ class App extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       home: const CounterPage(),
     );
+  }
+
+  Future<void> initAppCenter() async {
+    final ios = defaultTargetPlatform == TargetPlatform.iOS;
+    final appSecret = ios
+        ? "123cfac9-123b-123a-123f-123273416a48"
+        : "96781fae-f8e4-4114-98c3-51e7c52c8d53";
+
+    await AppCenter.start(secret: appSecret);
   }
 }
