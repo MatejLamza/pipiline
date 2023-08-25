@@ -1,0 +1,39 @@
+PODS:
+  - AppCenter (3.3.4):
+    - AppCenter/Analytics (= 3.3.4)
+    - AppCenter/Crashes (= 3.3.4)
+  - AppCenter/Analytics (3.3.4):
+    - AppCenter/Core
+  - AppCenter/Core (3.3.4)
+  - AppCenter/Crashes (3.3.4):
+    - AppCenter/Core
+  - AppCenter/Distribute (3.3.4):
+    - AppCenter/Core
+  - Flutter (1.0.0)
+  - flutter_appcenter_bundle (0.0.1):
+    - AppCenter (~> 3.3.4)
+    - AppCenter/Distribute (~> 3.3.4)
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_appcenter_bundle (from `.symlinks/plugins/flutter_appcenter_bundle/ios`)
+
+SPEC REPOS:
+  trunk:
+    - AppCenter
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_appcenter_bundle:
+    :path: ".symlinks/plugins/flutter_appcenter_bundle/ios"
+
+SPEC CHECKSUMS:
+  AppCenter: 0487be185c038ed2ecc5ed38219af1dcd280af23
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_appcenter_bundle: e8cb9428b85abc67bec226ce30d00f819dde9c55
+
+PODFILE CHECKSUM: 5b8c9ac32005feb6f6089781c47738a11d6e415f
+
+COCOAPODS: 1.12.1
